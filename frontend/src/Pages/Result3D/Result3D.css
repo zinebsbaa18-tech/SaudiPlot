@@ -1,0 +1,457 @@
+/* ============================
+   HOUSE PLAN STYLES (rethemed to the warm sand/olive/clay palette)
+   ============================ */
+
+.house-plan-wrapper {
+  min-height: 100vh;
+  background-color: var(--paper);
+  font-family: var(--body);
+  direction: rtl;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+}
+
+.house-plan-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Header */
+.house-plan-header {
+  margin-bottom: 1rem;
+}
+
+.house-plan-title {
+  font-family: var(--display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0 0 0.25rem 0;
+}
+
+.house-plan-subtitle {
+  font-size: 0.875rem;
+  color: var(--muted);
+  margin: 0;
+}
+
+/* Banner */
+.house-plan-banner {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  background-color: #e9eedf;
+  color: #53633c;
+  font-size: 0.875rem;
+  border: 1px solid #d9e1c8;
+}
+
+.banner-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 50%;
+  background-color: var(--olive);
+  color: #fff9ee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  flex-shrink: 0;
+}
+
+/* Main Layout */
+/* In RTL: first child -> RIGHT side, second child -> LEFT side */
+/* We want: LEFT = 3D View, RIGHT = Sidebar */
+/* So DOM order: Sidebar first, View second */
+
+.house-plan-layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+/* Right Sidebar (visually) - placed FIRST in DOM */
+.house-plan-sidebar {
+  width: 100%;
+  max-width: 280px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  order: 2; /* In RTL flex, this pushes it to the right visually */
+}
+
+/* Left 3D View (visually) - placed SECOND in DOM */
+.house-plan-view {
+  flex: 1 1 400px;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  order: 1; /* In RTL flex, this pushes it to the left visually */
+}
+
+/* View Toggle - at top of view area */
+.view-toggle {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  justify-content: flex-start;
+}
+
+.toggle-btn {
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--line);
+  background-color: var(--card);
+  color: var(--muted);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: var(--body);
+  transition: all 0.2s ease;
+}
+
+.toggle-btn-active {
+  background-color: var(--dark);
+  color: #fff9ee;
+  border-color: var(--dark);
+}
+
+/* View Container */
+.view-container {
+  background: var(--card);
+  border-radius: 0.75rem;
+  box-shadow: 0 6px 20px rgba(41, 35, 27, 0.06);
+  padding: 1.5rem;
+  position: relative;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--sand);
+}
+
+/* The map fills the card edge-to-edge */
+.view-container-map {
+  padding: 0;
+  overflow: hidden;
+  display: block;
+  height: 400px;
+}
+
+/* 2D plan: edge-to-edge, zoom clipped inside the box */
+.view-container--2d {
+  padding: 0;
+  overflow: hidden;
+  align-items: stretch;
+  justify-content: stretch;
+  min-height: 440px;
+}
+
+.view-container--2d .house-3d {
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.view-container--2d .house-3d img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.house-3d {
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Render-in-progress overlay */
+.render-pending-placeholder {
+  position: relative;
+  width: 100%;
+}
+
+.render-pending-label {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.render-pending-spinner {
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  border: 3px solid var(--sand);
+  border-top-color: var(--primary, #4a7c59);
+  border-radius: 50%;
+  animation: spin 0.9s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.house-svg {
+  width: 100%;
+  height: auto;
+}
+
+/* Labels on 3D view */
+.house-label {
+  position: absolute;
+  font-size: 0.75rem;
+  color: var(--muted);
+  background: rgba(255, 250, 240, 0.9);
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  white-space: nowrap;
+}
+
+.house-label-main {
+  top: 2rem;
+  right: 2rem;
+}
+
+.house-label-entrance {
+  bottom: 4rem;
+  left: 2rem;
+}
+
+/* Zoom Controls */
+.zoom-controls {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.zoom-btn {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.375rem;
+  border: 1px solid var(--line);
+  background-color: var(--card);
+  color: var(--ink);
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--body);
+}
+
+/* View Footer */
+.view-footer {
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--muted-light);
+  padding: 0.5rem;
+}
+
+/* Summary Card */
+.summary-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  box-shadow: 0 6px 20px rgba(41, 35, 27, 0.06);
+  padding: 1rem;
+}
+
+.summary-title {
+  font-family: var(--display);
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0 0 0.75rem 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--line);
+  text-align: center;
+}
+
+.summary-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.summary-label {
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.summary-value {
+  font-size: 0.75rem;
+  color: var(--ink);
+  font-weight: 500;
+  text-align: left;
+}
+
+/* Action Buttons */
+.action-btn {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: var(--body);
+  transition: all 0.2s ease;
+  border: none;
+}
+
+.action-btn-primary {
+  background-color: var(--dark);
+  color: #fff9ee;
+}
+
+.action-btn-primary:hover {
+  filter: brightness(1.15);
+}
+
+.action-btn-outline {
+  background-color: var(--card);
+  color: var(--ink);
+  border: 1px solid var(--line);
+}
+
+.action-btn-outline:hover {
+  background-color: var(--sand-tint);
+}
+
+/* File Formats */
+.file-formats {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  box-shadow: 0 6px 20px rgba(41, 35, 27, 0.06);
+  padding: 1rem;
+}
+
+.file-formats-title {
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin: 0 0 0.5rem 0;
+  text-align: center;
+}
+
+.file-formats-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.format-btn {
+  flex: 1;
+  padding: 0.375rem 0.5rem;
+  border-radius: 0.375rem;
+  border: 1px solid var(--line);
+  background-color: var(--card);
+  color: var(--ink);
+  font-size: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: var(--body);
+}
+
+.format-btn:hover {
+  background-color: var(--sand-tint);
+}
+
+/* Price Section */
+.price-section {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  box-shadow: 0 6px 20px rgba(41, 35, 27, 0.06);
+  padding: 1rem;
+  text-align: center;
+}
+
+.price-label {
+  font-size: 0.75rem;
+  color: var(--muted-light);
+  margin: 0 0 0.25rem 0;
+}
+
+.price-value {
+  font-family: var(--display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--clay);
+  margin: 0;
+}
+
+/* Extra Buttons */
+.extra-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.extra-btn {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--line);
+  background-color: var(--card);
+  color: var(--ink);
+  font-size: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: var(--body);
+}
+
+.extra-btn:hover {
+  background-color: var(--sand-tint);
+}
+
+/* Footer Note */
+.footer-note {
+  font-size: 0.65rem;
+  color: var(--muted-light);
+  text-align: center;
+  margin: 0.5rem 0 0 0;
+}
+
+/* ============================
+   RESPONSIVE
+   ============================ */
+
+@media (max-width: 768px) {
+  .house-plan-sidebar,
+  .house-plan-view {
+    max-width: 100%;
+    min-width: 100%;
+    order: 0; /* Reset order on mobile */
+  }
+
+  .house-plan-layout {
+    flex-direction: column;
+  }
+}

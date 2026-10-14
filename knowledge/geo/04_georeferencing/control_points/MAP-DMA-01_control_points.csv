@@ -1,0 +1,4 @@
+﻿map_id,pixel_x,pixel_y,longitude,latitude,point_name,source,confidence,review_status
+MAP-DMA-01,2609,219,50.212,26.51,رأس أرصفة ميناء الملك عبدالعزيز - الدمام,estimated_landmark,0.4,pending_review
+MAP-DMA-01,2770,1807,50.227,26.192,منطلق جسر الملك فهد من ساحل الخبر,estimated_landmark,0.4,pending_review
+MAP-DMA-01,2827,1797,50.245,26.19,الجزيرة الاصطناعية الأولى لجسر الملك فهد,estimated_landmark,0.3,pending_review

@@ -1,0 +1,34 @@
+.navbar {
+  height: 88px;
+  padding: 0 40px;
+  background: var(--card);
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar__brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.navbar__title {
+  margin: 0;
+  font-family: var(--display);
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.navbar__lang {
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    height: 74px;
+    padding: 0 20px;
+  }
+}

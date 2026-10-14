@@ -1,0 +1,52 @@
+# ── Secrets and local configuration ─────────────────────────────────────────
+.env
+.env.*
+!.env.example
+
+# ── Runtime databases and generated state ───────────────────────────────────
+*.sqlite
+*.sqlite3
+*.db
+storage/
+outputs/
+out/
+uploads/
+var/
+private_cases/
+
+# Validated knowledge databases are deliberately tracked (Git LFS) — the
+# exclusions above must not apply to the versioned knowledge package.
+!knowledge/**/*.sqlite
+!knowledge/**/*.sqlite3
+!knowledge/**/*.db
+!knowledge/**/*.gpkg
+
+# ── Node ────────────────────────────────────────────────────────────────────
+node_modules/
+dist/
+build/
+dist-ssr/
+*.local
+
+# ── Python ──────────────────────────────────────────────────────────────────
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.pytest_basetemp/
+.ruff_cache/
+
+# ── Agent tooling and review state ──────────────────────────────────────────
+.claude/
+.codex/
+.agents/
+review_logs/
+
+# ── Logs, OS, editor ────────────────────────────────────────────────────────
+*.log
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

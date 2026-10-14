@@ -1,0 +1,9 @@
+{
+  "id": "DEMO-SETBACK-01",
+  "provenance": "demo",
+  "display_name": "Demo residential setback rule set",
+  "statement": "Demonstration values invented for pipeline development. NOT official Saudi municipal regulations.",
+  "front_m": 3.0,
+  "side_m": 2.0,
+  "rear_m": 2.0
+}

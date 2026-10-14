@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "style_pack_id": "najdi_demo_v1",
+  "name_ar": "الطابع النجدي التجريبي",
+  "name_en": "Demo Najdi Character",
+  "version": "0.1.0",
+  "status": "demo_requires_architect_review",
+  "applicable_zone_ids": ["DEMO-ZONE-NAJDI-01"],
+  "allowed_building_type": "detached_single_storey_villa",
+  "massing_category": "demo_compact_rectangular_mass",
+  "prohibited_elements": [
+    "demo_prohibited_curtain_wall_glazing",
+    "demo_prohibited_mansard_roof",
+    "demo_prohibited_exposed_untreated_concrete"
+  ],
+  "human_review_notes": [
+    "DEMO interpretation authored for pipeline development only.",
+    "All identifiers and values require review by a licensed Saudi architect before any non-demo use.",
+    "Not derived from the official Saudi Architecture design guidelines."
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "MAP-DMA-01": {
+    "transform_type": "similarity_north_up",
+    "scale_m_per_px": 22.143,
+    "control_points_used": 2,
+    "control_points_total": 3,
+    "residuals_m": [
+      1208.7,
+      880.9,
+      445.9
+    ],
+    "rmse_m": 901.1,
+    "declared_accuracy_m": 3000,
+    "note": "نقاط تحكم تقديرية لمعالم ساحلية؛ الدقة المعلنة ±3 كم حتى المراجعة"
+  },
+  "MAP-DMA-02": {
+    "status": "ok",
+    "detector": "orb",
+    "matches": 1500,
+    "inliers": 906,
+    "reproj_rmse_px": 1.76,
+    "scale": 1.0398,
+    "rotation_deg": -0.003,
+    "matched_against": "MAP-DMA-01"
+  },
+  "MAP-DMA-03": {
+    "status": "ok",
+    "detector": "manual_visual",
+    "matches": 4,
+    "inliers": 4,
+    "reproj_rmse_px": 0.75,
+    "scale": 0.0483,
+    "rotation_deg": -0.197,
+    "note": "زوايا حزام المستوى الأول (القلب التاريخي) بمطابقة بصرية يدوية",
+    "matched_against": "MAP-DMA-01"
+  },
+  "MAP-DMA-04": {
+    "status": "ok",
+    "detector": "orb",
+    "matches": 1500,
+    "inliers": 326,
+    "reproj_rmse_px": 2.04,
+    "scale": 0.8398,
+    "rotation_deg": 0.026,
+    "matched_against": "MAP-DMA-01"
+  },
+  "MAP-DMA-05": {
+    "status": "ok",
+    "detector": "orb",
+    "matches": 1500,
+    "inliers": 40,
+    "reproj_rmse_px": 1.9,
+    "scale": 0.6392,
+    "rotation_deg": 0.117,
+    "matched_against": "MAP-DMA-01"
+  }
+}

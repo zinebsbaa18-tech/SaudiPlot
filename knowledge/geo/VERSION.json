@@ -1,0 +1,37 @@
+{
+  "package": "sbc_geo_knowledge",
+  "version": "0.1.1",
+  "source_snapshot_date": "2026-07-19",
+  "exported_date": "2026-07-20",
+  "source": {
+    "name": "sbc_geo_knowledge local working folder",
+    "git_history": "not available (source folder is not a usable git repository)",
+    "description": "Pipeline converting East Coast (Dammam metropolitan area) architectural-character guides and style-zone maps into a coordinate-queryable knowledge base with per-item source tracking and a human review workflow."
+  },
+  "counts": {
+    "sources": 4,
+    "zones_queryable": 21,
+    "zones_conceptual": 25,
+    "zones_without_geometry": 4,
+    "rules": 200,
+    "rule_zone_links": 4200,
+    "conflicts": 15
+  },
+  "review_status": {
+    "zones": { "approved": 21 },
+    "rules": { "approved": 154, "pending_review": 46 },
+    "rule_zone_links": { "approved": 3234, "pending_review": 966 },
+    "conflicts": { "resolved": 9, "auto_classified_sliver": 6 }
+  },
+  "geographic_accuracy": {
+    "declared_accuracy": "approximately +-3 km",
+    "crs": "EPSG:4326 (WGS84)",
+    "limitation": "Maps were georeferenced with ESTIMATED control points at coastal landmarks, not survey measurements. Results are advisory architectural-character knowledge only - never legal zoning, never parcel-level determination, never official regulatory compliance.",
+    "improvement_path": "Survey-grade control points (6-10 per map) would raise accuracy from +-3 km to survey precision; template in the source package's 04_georeferencing/control_points/."
+  },
+  "usage_notes": [
+    "The backend reads 07_database/sbc_rules.sqlite read-only (SPD_GEO_KNOWLEDGE_DB).",
+    "New/changed items always start as pending_review; pending knowledge is surfaced with warnings and never presented as approved guidance.",
+    "Sources are architectural-character guides (styles, facades, materials, composition) - they contain no quantitative municipal building requirements (setbacks, coverage ratios)."
+  ]
+}

@@ -1,0 +1,78 @@
+modules = ["python-3.12", "nodejs-20", "web"]
+
+[nix]
+channel = "stable-25_05"
+packages = ["freetype", "geos", "glibcLocales", "libxcrypt"]
+
+[agent]
+expertMode = true
+
+[userenv]
+
+[userenv.shared]
+SPD_COOKIE_NAME = "spd_session"
+SPD_COOKIE_SAMESITE = "lax"
+SPD_COOKIE_SECURE = "false"
+SPD_CORS_ORIGINS = "[\"http://localhost:5000\"]"
+SPD_DATABASE_URL = "sqlite:///./var/saudi_plot_api.db"
+SPD_ENVIRONMENT = "development"
+SPD_GEMINI_EXTRACTION_MODEL = "gemini-2.5-flash"
+SPD_GEMINI_RENDER_MODEL = "gemini-2.5-flash-image"
+SPD_GEO_KNOWLEDGE_DB = "../knowledge/geo/07_database/sbc_rules.sqlite"
+SPD_SESSION_TTL_SECONDS = "604800"
+SPD_SHARE_TTL_SECONDS = "604800"
+SPD_STORAGE_ROOT = "./var/storage"
+SPD_UPLOAD_MAX_BYTES = "20971520"
+VITE_API_BASE_URL = ""
+
+[workflows]
+runButton = "Project"
+
+[[workflows.workflow]]
+name = "Project"
+mode = "parallel"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Backend API"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Start application"
+
+[[workflows.workflow]]
+name = "Backend API"
+author = "agent"
+
+[workflows.workflow.metadata]
+outputType = "console"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "cd backend && uvicorn --factory saudi_plot_api.main:create_app --host 0.0.0.0 --port 8000 --reload"
+waitForPort = 8000
+
+[[workflows.workflow]]
+name = "Start application"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "cd frontend && npm run dev"
+waitForPort = 5000
+
+[workflows.workflow.metadata]
+outputType = "webview"
+
+[[ports]]
+localPort = 5000
+externalPort = 80
+
+[[ports]]
+localPort = 8000
+externalPort = 8000
+
+[postMerge]
+path = "scripts/post-merge.sh"
+timeoutMs = 120000

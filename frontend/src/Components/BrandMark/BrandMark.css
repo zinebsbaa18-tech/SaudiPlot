@@ -1,0 +1,20 @@
+.brand-mark {
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  border-radius: 11px;
+  background: var(--dark);
+  color: #eadbc1;
+  display: grid;
+  place-items: center;
+  font-family: var(--display);
+  font-size: 19px;
+  box-shadow: 0 7px 20px rgba(41, 35, 27, 0.16);
+}
+
+.brand-mark--sm {
+  width: 32px;
+  height: 32px;
+  border-radius: 9px;
+  font-size: 16px;
+}

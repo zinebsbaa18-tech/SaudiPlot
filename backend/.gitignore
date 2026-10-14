@@ -1,0 +1,32 @@
+# Generated outputs
+out/
+
+# Web adapter local state (W1): dev database, storage root, real env files
+var/
+*.db
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+build/
+dist/
+
+# Tooling caches
+.pytest_cache/
+.pytest_basetemp/
+.ruff_cache/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Private case data - never committed (user-provided, no demo provenance)
+private_cases/

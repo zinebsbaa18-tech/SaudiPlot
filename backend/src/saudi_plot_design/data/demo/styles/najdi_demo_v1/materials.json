@@ -1,0 +1,24 @@
+{
+  "provenance": "demo",
+  "material_palette": [
+    {
+      "id": "demo_earthen_render",
+      "name_ar": "لياسة طينية (تجريبي)",
+      "name_en": "Earthen render (demo)",
+      "finish_note": "DEMO value - smooth earthen-tone render placeholder."
+    },
+    {
+      "id": "demo_painted_wood_trim",
+      "name_ar": "خشب مطلي (تجريبي)",
+      "name_en": "Painted wood trim (demo)",
+      "finish_note": "DEMO value - trim placeholder for doors and screens."
+    },
+    {
+      "id": "demo_stone_plinth",
+      "name_ar": "قاعدة حجرية (تجريبي)",
+      "name_en": "Stone plinth (demo)",
+      "finish_note": "DEMO value - base course placeholder."
+    }
+  ],
+  "color_palette_hex": ["#D9C7A3", "#8A5A2B", "#B49B72", "#6E4F2A"]
+}

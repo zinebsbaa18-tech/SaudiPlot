@@ -1,0 +1,90 @@
+.stepper-row {
+  width: 100%;
+  box-sizing: border-box;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.stepper-row__label-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.stepper-row__label {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.stepper-row__badge {
+  flex-shrink: 0;
+  background: var(--sand-tint-strong);
+  color: var(--olive-dark);
+  border-radius: 999px;
+  padding: 3px 10px;
+  font-size: 11.5px;
+  font-weight: 600;
+}
+
+.stepper-row__controls {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 14px;
+}
+
+.stepper-row__value {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--ink);
+  min-width: 20px;
+  text-align: center;
+}
+
+.stepper-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: var(--sand-tint-strong);
+  border: none;
+  color: var(--olive-dark);
+  font-size: 18px;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.15s ease, transform 0.1s ease;
+}
+
+.stepper-btn:hover:not(:disabled) {
+  background: var(--sand);
+}
+
+.stepper-btn:active:not(:disabled) {
+  transform: scale(0.88);
+}
+
+.stepper-btn:focus-visible {
+  outline: 3px solid rgba(41, 35, 27, 0.3);
+  outline-offset: 2px;
+}
+
+.stepper-btn:disabled {
+  opacity: 0.4;
+}
+
+.stepper-row {
+  transition: border-color 0.15s ease, box-shadow 0.2s ease;
+}
+
+.stepper-row:hover {
+  border-color: var(--olive);
+  box-shadow: 0 4px 14px rgba(41, 35, 27, 0.06);
+}

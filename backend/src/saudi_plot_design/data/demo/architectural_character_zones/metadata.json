@@ -1,0 +1,16 @@
+{
+  "dataset_id": "DEMO-CHAR-ZONES",
+  "version": "0.1.0",
+  "created": "2026-07-13",
+  "publisher": "saudi-plot-design development team (synthetic demo data)",
+  "license_note": "Internal development use only. Synthetic data - no license claim over any real boundary.",
+  "coverage": "Three coarse synthetic rectangles near Riyadh, Jeddah, and Abha, authored only to exercise the lookup pipeline.",
+  "crs": "EPSG:4326",
+  "status": "DEMO SYNTHETIC - NOT OFFICIAL - REQUIRES VERIFICATION",
+  "provenance_level": "demo",
+  "limitations": [
+    "Polygons are hand-drawn rectangles and do not represent any legally or officially published architectural character zone.",
+    "Coverage is deliberately coarse so the data cannot be mistaken for a real map.",
+    "Must be replaced by verified data through the future trusted approval process before any non-demo use."
+  ]
+}

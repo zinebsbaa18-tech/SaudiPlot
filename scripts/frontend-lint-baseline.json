@@ -1,0 +1,15 @@
+{
+  "src/Pages/ConfirmData/ConfirmData.jsx|no-unused-vars": 1,
+  "src/Pages/ExtractionFailed/ExtractionFailed.jsx|no-unused-vars": 1,
+  "src/Pages/Generating/Generating.jsx|no-unused-vars": 1,
+  "src/Pages/Landing/Landing.jsx|no-unused-vars": 1,
+  "src/Pages/Question1/Question1.jsx|no-unused-vars": 1,
+  "src/Pages/Question2/Question2.jsx|no-unused-vars": 1,
+  "src/Pages/Question3/Question3.jsx|no-unused-vars": 1,
+  "src/Pages/Question4/Question4.jsx|no-unused-vars": 1,
+  "src/Pages/Question5/Question5.jsx|no-unused-vars": 1,
+  "src/Pages/Question6/Question6.jsx|no-unused-vars": 1,
+  "src/Pages/Result3D/Result3D.jsx|no-unused-vars": 1,
+  "src/Pages/RoomCatalog/RoomCatalog.jsx|no-unused-vars": 1,
+  "src/Pages/Upload/Upload.jsx|no-unused-vars": 1
+}

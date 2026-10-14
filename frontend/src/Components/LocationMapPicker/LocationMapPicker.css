@@ -1,0 +1,365 @@
+.map-picker-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 400;
+  background: rgba(37, 35, 29, 0.6);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: map-picker-fade 0.2s ease both;
+}
+
+@keyframes map-picker-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.map-picker {
+  width: min(880px, 100%);
+  max-height: min(760px, 100%);
+  background: var(--card);
+  border-radius: 20px;
+  box-shadow: 0 40px 100px rgba(37, 35, 29, 0.35);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: map-picker-rise 0.25s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes map-picker-rise {
+  from { opacity: 0; transform: translateY(16px) scale(0.98); }
+  to { opacity: 1; transform: none; }
+}
+
+.map-picker__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 20px;
+  border-bottom: 1px solid var(--line);
+}
+
+.map-picker__title {
+  margin: 0;
+  font-family: var(--display);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.map-picker__dims-badge {
+  margin: 4px 0 0;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--olive-dark);
+}
+
+.map-picker__close {
+  background: var(--sand-tint-strong);
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink);
+  flex-shrink: 0;
+  transition: background-color 0.15s ease;
+}
+.map-picker__close:hover {
+  background: var(--sand);
+}
+
+.map-picker__search-row {
+  display: flex;
+  gap: 10px;
+  padding: 14px 20px 0;
+  flex-wrap: wrap;
+}
+
+.map-picker__search {
+  position: relative;
+  flex: 1 1 260px;
+  min-width: 0;
+}
+
+.map-picker__search-icon {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  color: var(--muted-light);
+  pointer-events: none;
+}
+
+.map-picker__search-input {
+  width: 100%;
+  box-sizing: border-box;
+  background: var(--paper-strong);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 11px 38px 11px 14px;
+  font-size: 14px;
+  font-family: inherit;
+  color: var(--ink);
+  text-align: right;
+}
+.map-picker__search-input:focus {
+  outline: none;
+  border-color: var(--olive);
+  box-shadow: 0 0 0 3px rgba(110, 114, 72, 0.15);
+}
+
+.map-picker__search-spinner {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  width: 14px;
+  height: 14px;
+  margin-top: -7px;
+  border: 2px solid var(--sand);
+  border-top-color: var(--olive-dark);
+  border-radius: 50%;
+  animation: map-picker-spin 0.7s linear infinite;
+}
+@keyframes map-picker-spin {
+  to { transform: rotate(360deg); }
+}
+
+.map-picker__results {
+  position: absolute;
+  z-index: 10;
+  top: calc(100% + 6px);
+  right: 0;
+  left: 0;
+  margin: 0;
+  padding: 6px;
+  list-style: none;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: 0 16px 40px rgba(37, 35, 29, 0.18);
+  max-height: 220px;
+  overflow-y: auto;
+}
+
+.map-picker__results button {
+  display: block;
+  width: 100%;
+  text-align: right;
+  background: none;
+  border: none;
+  border-radius: 8px;
+  padding: 9px 10px;
+  font-size: 13px;
+  font-family: inherit;
+  color: var(--ink);
+  line-height: 1.5;
+}
+.map-picker__results button:hover {
+  background: var(--sand-tint);
+}
+
+.map-picker__locate-btn {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--sand-tint-strong);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 0 16px;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: inherit;
+  color: var(--olive-dark);
+  white-space: nowrap;
+  transition: background-color 0.15s ease, transform 0.15s ease;
+}
+.map-picker__locate-btn:hover:not(:disabled) {
+  background: var(--sand);
+  transform: translateY(-1px);
+}
+.map-picker__locate-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.map-picker__geo-error {
+  margin: 8px 20px 0;
+  font-size: 12.5px;
+  color: #b91c1c;
+}
+
+.map-picker__hint {
+  margin: 8px 20px 0;
+  font-size: 12.5px;
+  color: var(--muted);
+  text-align: right;
+}
+
+.map-picker__map-wrap {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 320px;
+  margin: 14px 20px 0;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+}
+
+.map-picker__map {
+  position: absolute;
+  inset: 0;
+}
+
+/* Corner resize handles — small squares at each corner of the plot
+   rectangle. Dragging one resizes from the opposite (fixed) corner while
+   keeping the area constant (see resizeFromCorner in plotGeometry.js). */
+.map-picker__corner-handle {
+  width: 14px;
+  height: 14px;
+  background: #fff9ee;
+  border: 2.5px solid #9d5b3e;
+  border-radius: 3px;
+  box-shadow: 0 2px 6px rgba(37, 35, 29, 0.3);
+}
+
+/* Rotation handle — a small circle offset from the plot's top edge,
+   connected by a dashed guide line; dragging it spins the rectangle. */
+.map-picker__rotate-handle {
+  width: 16px;
+  height: 16px;
+  background: #505632;
+  border: 2.5px solid #fff9ee;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(37, 35, 29, 0.35);
+}
+
+.map-picker__north-arrow {
+  position: absolute;
+  z-index: 5;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+  background: var(--card);
+  border-radius: 10px;
+  padding: 6px 8px;
+  color: var(--dark);
+  box-shadow: 0 6px 18px rgba(37, 35, 29, 0.2);
+}
+.map-picker__north-arrow span {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.map-picker__area-badge {
+  position: absolute;
+  z-index: 5;
+  top: 10px;
+  right: 10px;
+  background: var(--card);
+  color: var(--olive-dark);
+  border-radius: 999px;
+  padding: 7px 14px;
+  font-size: 12.5px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  box-shadow: 0 6px 18px rgba(37, 35, 29, 0.2);
+}
+
+.map-picker__style-toggle {
+  position: absolute;
+  z-index: 5;
+  bottom: 10px;
+  right: 10px;
+  display: flex;
+  background: var(--card);
+  border-radius: 10px;
+  padding: 3px;
+  box-shadow: 0 6px 18px rgba(37, 35, 29, 0.2);
+}
+
+.map-picker__style-toggle button {
+  border: none;
+  background: none;
+  border-radius: 7px;
+  padding: 7px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: inherit;
+  color: var(--muted);
+  cursor: pointer;
+}
+.map-picker__style-toggle button.is-active {
+  background: var(--dark);
+  color: #fff9ee;
+}
+
+.map-picker__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 20px 20px;
+  flex-wrap: wrap;
+}
+
+.map-picker__coords {
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+}
+
+.map-picker__actions {
+  display: flex;
+  gap: 10px;
+}
+
+.map-picker__cancel,
+.map-picker__confirm {
+  border-radius: 10px;
+  padding: 11px 22px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: inherit;
+  border: none;
+}
+
+.map-picker__cancel {
+  background: var(--sand-tint-strong);
+  color: var(--ink);
+}
+.map-picker__cancel:hover {
+  background: var(--sand);
+}
+
+.map-picker__confirm {
+  background: var(--dark);
+  color: #fff9ee;
+  transition: transform 0.15s ease, filter 0.15s ease;
+}
+.map-picker__confirm:hover:not(:disabled) {
+  filter: brightness(1.12);
+  transform: translateY(-1px);
+}
+.map-picker__confirm:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media (max-width: 640px) {
+  .map-picker-overlay { padding: 0; }
+  .map-picker { width: 100%; height: 100%; max-height: 100%; border-radius: 0; }
+  .map-picker__map-wrap { margin: 12px 12px 0; }
+  .map-picker__search-row { padding: 12px 12px 0; }
+  .map-picker__footer { padding: 14px 12px 16px; }
+}

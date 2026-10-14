@@ -1,0 +1,90 @@
+{
+  "type": "FeatureCollection",
+  "x_provenance": {
+    "level": "demo",
+    "statement": "DEMO SYNTHETIC polygons, NOT OFFICIAL, REQUIRES VERIFICATION. Hand-drawn for pipeline development; not the official Saudi Architecture map.",
+    "created": "2026-07-13"
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "zone_id": "DEMO-ZONE-NAJDI-01",
+        "name_ar": "الطابع النجدي (تجريبي)",
+        "name_en": "Najdi character (demo zone)",
+        "style_pack_id": "najdi_demo_v1",
+        "priority": 1,
+        "provenance": "demo",
+        "known_limitations": [
+          "Synthetic rectangle around Riyadh; not an official boundary."
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [46.0, 24.0],
+            [47.5, 24.0],
+            [47.5, 25.4],
+            [46.0, 25.4],
+            [46.0, 24.0]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "zone_id": "DEMO-ZONE-HEJAZI-01",
+        "name_ar": "الطابع الحجازي (تجريبي)",
+        "name_en": "Hejazi character (demo zone)",
+        "style_pack_id": null,
+        "priority": 2,
+        "provenance": "demo",
+        "known_limitations": [
+          "Synthetic rectangle around Jeddah; not an official boundary.",
+          "No style pack installed for this character in the MVP."
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [38.8, 21.2],
+            [39.6, 21.2],
+            [39.6, 22.0],
+            [38.8, 22.0],
+            [38.8, 21.2]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "zone_id": "DEMO-ZONE-ASIRI-01",
+        "name_ar": "الطابع العسيري (تجريبي)",
+        "name_en": "Asiri character (demo zone)",
+        "style_pack_id": null,
+        "priority": 3,
+        "provenance": "demo",
+        "known_limitations": [
+          "Synthetic rectangle around Abha; not an official boundary.",
+          "No style pack installed for this character in the MVP."
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [42.2, 17.9],
+            [42.9, 17.9],
+            [42.9, 18.5],
+            [42.2, 18.5],
+            [42.2, 17.9]
+          ]
+        ]
+      }
+    }
+  ]
+}

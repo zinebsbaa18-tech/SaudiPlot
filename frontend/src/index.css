@@ -1,0 +1,124 @@
+:root {
+  --ink: #29231b;
+  --muted: #746b5f;
+  --muted-light: #9a8f80;
+  --paper: #f8f1e5;
+  --paper-strong: #fffaf1;
+  --card: #fffaf0;
+  --sand: #dfccb0;
+  --sand-tint: #f3ead9;
+  --sand-tint-strong: #eee3cf;
+  --line: rgba(72, 58, 42, 0.17);
+  --olive: #6e7248;
+  --olive-dark: #505632;
+  --clay: #9d5b3e;
+  --dark: #25231d;
+  --display: "Noto Kufi Arabic", "IBM Plex Sans Arabic", sans-serif;
+  --body: "IBM Plex Sans Arabic", "Segoe UI", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-color: var(--paper);
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--body);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.page {
+  min-height: 100vh;
+  animation: page-enter 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Question-wizard pages animate via framer-motion (carousel slide) instead
+   of the generic page-enter keyframe, and stack absolutely inside
+   .carousel-viewport so the outgoing and incoming steps can overlap. */
+.carousel-viewport {
+  position: relative;
+  min-height: 100vh;
+  overflow-x: clip;
+}
+
+.page--carousel {
+  animation: none;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+}
+
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Staggered reveal for the main content block on each screen. */
+.upload,
+.question-wizard,
+.confirm-data,
+.extraction-failed,
+.generating,
+.room-catalog {
+  animation: content-rise 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: 0.06s;
+}
+
+@keyframes content-rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* Respect users who prefer reduced motion. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}

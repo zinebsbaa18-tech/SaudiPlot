@@ -1,0 +1,27 @@
+{
+  "provenance": "demo",
+  "entrance_composition_options": [
+    "demo_recessed_entrance_with_stepped_frame",
+    "demo_flush_entrance_with_lintel_band"
+  ],
+  "window_proportion_range_w_to_h": { "min": 0.4, "max": 0.75 },
+  "window_group_ids": ["demo_single_vertical", "demo_paired_vertical"],
+  "shading_element_ids": ["demo_deep_reveal", "demo_wood_screen_tarima"],
+  "parapet_family_ids": ["demo_triangular_crenellation"],
+  "plinth_height_range_m": { "min": 0.3, "max": 0.6 },
+  "wall_treatment_ids": ["demo_earthen_render_smooth", "demo_band_incision_row"],
+  "fence_gate_family_id": "demo_solid_fence_with_crenellation_caps",
+  "facade_dimensions": {
+    "wall_height_m": 3.6,
+    "parapet_height_m": 0.7,
+    "parapet_unit_width_m": 0.9,
+    "parapet_gap_m": 0.45,
+    "window_sill_height_m": 0.9,
+    "window_head_height_m": 2.6,
+    "window_max_width_m": 1.2,
+    "door_head_height_m": 2.4,
+    "surround_band_width_m": 0.12,
+    "ornament_band_elevation_m": 2.8,
+    "ornament_band_height_m": 0.25
+  }
+}

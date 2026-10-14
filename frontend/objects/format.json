@@ -1,0 +1,105 @@
+{
+  "document": {
+    "document_number": "660026248839",
+    "document_type": "وثيقة تملك عقار",
+    "document_status": "فعال",
+    "issue_date_hijri": "1446/02/10",
+    "issue_date_gregorian": "2024/08/14",
+    "previous_document_number": "330107042278",
+    "previous_document_date": "1445/08/22",
+    "operation_type": "فرز / دمج"
+  },
+  "owners": [
+    {
+      "name": "شركة عدل العقارية",
+      "id_number": "7027168900",
+      "ownership_percentage": 100
+    }
+  ],
+  "property": {
+    "property_id": "3152856015840001",
+    "property_type": "قطعة أرض",
+    "city": "البيضاء",
+    "district": "المطار",
+    "plan_type": "مخطط",
+    "plan_number": "ش د 916 معدل",
+    "block": "1",
+    "parcel_number": "تجاري / 1 / ح1",
+    "area_m2": 2892.3
+  },
+  "land_details": {
+    "total_area_m2": 2892.3,
+    "boundaries": {
+      "north": {
+        "length_m": 70.0,
+        "description": "على شارع عرض 20 م"
+      },
+      "south": {
+        "length_m": 68.78,
+        "description": "على شارع عرض 15 م"
+      },
+      "east": {
+        "length_m": 41.92,
+        "description": "على ممر مشاة عرض 8 م"
+      },
+      "west": {
+        "length_m": 42.5,
+        "description": "على شارع عرض 41 م"
+      }
+    }
+  },
+  "qr_codes": [
+    {
+      "exists": true,
+      "decoded_text": null,
+      "type": "verification"
+    },
+    {
+      "exists": true,
+      "decoded_text": null,
+      "type": "property_map_qr"
+    },
+    {
+      "exists": true,
+      "decoded_text": null,
+      "type": "location_qr"
+    }
+  ],
+  "verification": {
+    "verification_url": "https://srem.moj.gov.sa"
+  },
+  "extra_information": {
+    "restrictions": "لا يوجد"
+  },
+  "family_preferences": {
+    "family_members": {
+      "count_range": "5-7",
+      "estimated_count": 6
+    },
+    "elderly_or_accessibility": {
+      "has_elderly": true
+    },
+    "bedrooms": {
+      "count": 4
+    },
+    "master_bedrooms": {
+      "count": 1
+    },
+    "guest_reception": {
+      "type": "majlis_separate",
+      "label": "مجالس رجال بمدخل مستقل"
+    },
+    "kitchen": {
+      "type": "closed_with_pantry",
+      "label": "مغلق + مطبخ تحضيري"
+    },
+    "additional_rooms": {
+      "laundry_room": false,
+      "maid_room": true,
+      "maid_entrance": false,
+      "storage_room": true,
+      "driver_room": false
+    }
+  },
+  "raw_text": "البيانات الأساسية رقم الوثيقة 660026248839 تاريخ الوثيقة 1446/02/10..."
+}

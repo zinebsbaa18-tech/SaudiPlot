@@ -1,0 +1,13 @@
+{
+  "provenance_level": "demo",
+  "statement": "DEMO style pack authored for pipeline development. NOT derived from the official Saudi Architecture design guidelines and NOT reviewed by a licensed architect.",
+  "sources": [],
+  "created": "2026-07-13",
+  "reviewer": null,
+  "review_date": null,
+  "limitations": [
+    "Every identifier, proportion, material, and color is a synthetic placeholder.",
+    "Requires review by a licensed Saudi architect before any non-demo use.",
+    "Replacement with verified guideline data requires the future trusted approval process (NOT NOW)."
+  ]
+}
