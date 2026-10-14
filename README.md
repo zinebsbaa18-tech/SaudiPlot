@@ -15,6 +15,12 @@ an optional AI presentation render.
 > document. Geographic zone boundaries carry a declared accuracy of about
 > **±3 km**. All outputs render this disclaimer unconditionally.
 
+## Screenshots
+
+![Saudi Plot Platform screenshot 1](docs/screenshots/demo-1.png)
+
+![Saudi Plot Platform screenshot 2](docs/screenshots/demo-2.png)
+
 ## Architecture
 
 ```mermaid
